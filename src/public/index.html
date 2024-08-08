@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello, Sailor!</title>
+    <link rel="stylesheet" href="index.css" />
+    <script src="index.js"></script>
+</head>
+<body>
+    <div>
+        <h2>Sign your messages here:</h2>
+        <label for="message">Message</label>
+        <input id="message" type="text" />
+        <button id="submit-message" type="submit">Send</button>
+    </div>
+    <div>
+        <h2>Check your signatures here afterwards:</h2>
+        <table>
+            <thead>
+                <tr>
+                    <td>Original Message</td>
+                    <td>Message Signature</td>
+                    <td>Verified</td>
+                </tr>
+            </thead>
+            <tbody id="signatures">
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
