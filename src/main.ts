@@ -7,9 +7,6 @@ var ec = new EC('p521');
 
 var keyPair = ec.genKeyPair();
 
-console.log('public:', keyPair.getPublic('hex'));
-console.log('private:', keyPair.getPrivate('hex'));
-
 const server = express();
 server.use(bodyParser.json());
 
