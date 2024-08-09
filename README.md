@@ -7,7 +7,7 @@ A basic message signing server using Express.
 - ✅ An Express HTTP Server
 - ✅ A POST endpoint for signing text messages
 - ✅ A POST endpoint for verifying signed text messages
-- ✅ Unit test for signing and verification
+- ✅ Unit tests for signing and verification
 - ✅ An OpenAPI spec for the API
 - ✅ Request and response format validation
 - ✅ A Basic Web UI on `localhost:3000` as a utility for 
