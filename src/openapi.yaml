@@ -1,0 +1,122 @@
+openapi: 3.0.0
+info:
+  title: Key Signing API
+  description: Playground API for signing messages with elliptic key pairs
+  version: 0.0.1
+servers:
+  - url: http://localhost:3000/
+    description: dev server
+paths:
+  /sign:
+    post:
+      summary: Sign a message
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SignMessagePayload'
+      responses:
+        200:
+          description: The Signature
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SignMessageResponse'
+        default:
+          description: error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /verify:
+    post:
+      summary: Verify a signature for a given message
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/VerifyMessagePayload'
+      responses:
+        200:
+          description: The verification status
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VerifyMessageResponse'
+        default:
+          description: error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+
+components:
+  schemas:
+    Error:
+      type: object
+      required:
+        - status
+      additionalProperties: false
+      properties:
+        status:
+          type: integer
+        message:
+          type: string
+    SignMessagePayload:
+      type: object
+      additionalProperties: false
+      required:
+        - message
+      properties:
+        message:
+          type: string
+          nullable: false
+      example:
+        {
+          message: 'Sign me, please!'
+        }
+    SignMessageResponse:
+      type: object
+      additionalProperties: false
+      required:
+        - signature
+      properties:
+        signature:
+          type: string
+          nullable: false
+      example:
+        {
+          signature: '7868AE8768EF876'
+        }
+    VerifyMessagePayload:
+      type: object
+      additionalProperties: false
+      required:
+        - message
+        - signature
+      properties:
+        message:
+          type: string
+          nullable: false
+        signature:
+          type: string
+          nullable: false
+      example:
+        {
+          message: 'Sign me, please!',
+          signature: '7868AE8768EF876'
+        }
+    VerifyMessageResponse:
+      type: object
+      additionalProperties: false
+      required:
+        - verified
+      properties:
+        verified:
+          type: boolean
+          nullable: false
+      example:
+        {
+          verified: false
+        }

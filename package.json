@@ -5,7 +5,8 @@
   "scripts": {
     "start": "tsx watch src/main.ts",
     "debug": "tsx --inspect-brk src/main.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --require tsx '**/*.spec.ts' --recursive",
+    "test-debug": "mocha --require tsx --inspect-brk '**/*.spec.ts' --recursive"
   },
   "author": "",
   "license": "ISC",
@@ -13,12 +14,20 @@
   "dependencies": {
     "body-parser": "^1.20.2",
     "express": "^4.19.2",
-    "tsx": "^4.17.0"
+    "express-openapi-validator": "^5.3.1",
+    "swagger-ui-express": "^5.0.1",
+    "tsx": "^4.17.0",
+    "yaml": "^2.5.0"
   },
   "devDependencies": {
     "@types/body-parser": "^1.19.5",
+    "@types/chai": "^4.3.17",
     "@types/elliptic": "^6.4.18",
     "@types/express": "^4.17.21",
-    "elliptic": "^6.5.6"
+    "@types/mocha": "^10.0.7",
+    "@types/swagger-ui-express": "^4.1.6",
+    "chai": "^5.1.1",
+    "elliptic": "^6.5.6",
+    "mocha": "^10.7.3"
   }
 }

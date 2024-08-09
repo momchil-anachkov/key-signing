@@ -1,0 +1,15 @@
+table, th, td {
+    border: 1px solid black;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+td:nth-child(2) {
+    word-break: break-word;
+}
+
+th {
+    word-break: keep-all;
+}
