@@ -11,7 +11,7 @@ A basic message signing server using Express.
 - ✅ An OpenAPI spec for the API
 - ✅ Request and response format validation
 - ✅ A Basic Web UI on `localhost:3000` as a utility for 
-  sending messages for signing, and verifying signed messages
+  sending messages to sign, and verifying signed messages
   - ✅ Both the message and signature are editable from the UI, to verify the negative case as well
 - ✅ Swagger UI on `localhost:3000/api-docs`
 
